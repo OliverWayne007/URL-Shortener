@@ -47,7 +47,7 @@ const handleGetAllUrls = async (req , res) => {
     // </body>
     // </html>
     // `);
-    return res.render("home");
+    return res.render("home" , { allUrls : allUrls} );
 }
 
 const handleGetShortId = async (req , res) => {

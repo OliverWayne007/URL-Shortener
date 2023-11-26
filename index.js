@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express');
 
 const path = require("path");
@@ -12,7 +14,7 @@ const staticRouter = require("./routes/staticRouter");
 
 // const { urlModel } = require("./models/url");
 
-const PORT = process.env.PORT;
+const port = process.env.PORT;
 
 connectMongoDB('mongodb://127.0.0.1:27017/URL_Shortener')
 .then( () => {
@@ -46,8 +48,8 @@ app.use('/' , staticRouter);
 
 
 
-app.listen(PORT , () => {
+app.listen(port , () => {
     console.log("Server Started !");
-    console.log(`Server Running on port: ${PORT}`);
+    console.log(`Server Running on port: ${port}`);
     console.log('\n');
 } );
