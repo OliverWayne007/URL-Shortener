@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: blanchedalmond;
+            color: rgb(124, 31, 31);
+            font-weight: bold;
+        }
+        #tableDiv{
+            border: 4px solid black;
+            margin-top: 20px;
+            padding: 3px;
+        }
+        #formDiv{
+            border: 4px solid black;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 5px;
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+        }
+
+        th, td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: left;
+        }
+
+        th {
+          background-color: #ccea08;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>URL Shortener</h1>
+    <% if (locals.shortID) { %>
+     <p>URL Generated: http://localhost:8001/url/<%=shortID %></p>
+    <% } %>
+    <div id="formDiv">
+        <form method="post" action="/url">
+            <label for=""> Enter your original URL: </label>
+            <input type="text" placeholder="https://example.com" name="redirectURL">
+            <button type="submit"> Generate </button>
+        </form>
+    </div>
+    <div id="tableDiv">
+        <% if (locals.allUrls) { %>
+            <table>
+                <thead>
+                    <th>S No.</th>
+                    <th>Original URL</th>
+                    <th>Short ID</th>
+                    <th>Total Visits</th>
+                </thead>
+                <tbody>
+                    <% allUrls.forEach( (url , index) => { %>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                        <td><%= url.redirectUrl %></td>
+                        <td><%= url.shortId %></td>
+                        <td><%= url.visitHistory.length %></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } %>
+    </div>
+</body>
+</html>
