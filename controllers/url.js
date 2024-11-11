@@ -1,5 +1,3 @@
-const mongoose = require("mongoose");
-
 const urlModel = require("../models/url").urlModel;
 
 const shortid = require("shortid");

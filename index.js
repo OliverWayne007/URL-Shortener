@@ -26,9 +26,11 @@ connectMongoDB('mongodb://127.0.0.1:27017/URL_Shortener')
     console.log('\n');
 });
 
+
 app.set("view engine" , "ejs");
 
 app.set("views" , path.resolve("./views"));
+
 
 app.use(express.json());
 
