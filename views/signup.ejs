@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: blanchedalmond;
+            color: rgb(124, 31, 31);
+            font-weight: bold;
+        }
+        #formDiv{
+            /* border: 4px solid black; */
+            margin-top: 50px;
+            margin-bottom: 50px;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+        }
+        #title
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+    <div id="title">
+        <h1> Sign Up </h1>
+    </div>
+    <div id="formDiv">
+        <form action="/user/signup" method="post">
+            <label for=""> Username: </label>
+            <input type="text" placeholder="Enter your username" required name="username">
+            <br /><br/>
+            <label for=""> Password: </label>
+            <input type="text" placeholder="Enter your password" required name="password">
+            <br /> <br />
+            <label for=""> Email: </label>
+            <input type="text" placeholder="Enter your email" required name="email">
+            <br /> <br />
+            <button type="submit"> Submit </button>
+        </form>
+    </div>
+</body>
+</html>
