@@ -12,4 +12,4 @@ router.get('/test' , urlControllers.handleGetAllUrls);
 
 router.get('/:shortId' , urlControllers.handleGetShortId);
 
-module.exports = router;
+module.exports = router; 

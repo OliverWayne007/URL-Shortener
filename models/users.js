@@ -22,6 +22,8 @@ const userSchema = new mongoose.Schema( {
     
 } , { timestamps: true } );
 
-const userModel = new mongoose.model('users' , userSchema);
+const userModel = mongoose.model('users' , userSchema); 
+// users is the name of collection to be created inside the URL_Shortener database created using mongodb.
+// The schema of the "users" collection is defined by "userSchema"
 
 module.exports = userModel;
